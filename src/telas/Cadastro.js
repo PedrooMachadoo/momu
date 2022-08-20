@@ -1,28 +1,36 @@
 import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { MaterialIcons } from '@expo/vector-icons';
 
 
-export function Cadastro({navigation}) {
+export function Cadastro({ navigation }) {
 
-    
-  function abrirTela2() {
-    navigation.navigate('BemVindo')
-  }
 
-    
+    function abrirTela2() {
+        navigation.navigate('BemVindo')
+    }
+
+
 
     return (
         <View style={style.container}>
 
-            <View style={style.titulo} onPress={abrirTela2}>
+            {/*<View style={style.titulo} onPress={abrirTela2}>
                 <Image
                     style={style.arrowBack}
                     
                     source={require('../../assets/arrow.png')}
                 />
 
-                
+            </View>*/}
+            <View style={style.titulo}>
+                <MaterialIcons
+                    name='favorite'
+                    color={'black'}
+                    size={40}
+                    onPress={abrirTela2}
+                />
 
             </View>
 
@@ -71,12 +79,12 @@ const style = StyleSheet.create({
     arrowBack: {
         width: 24,
         height: 24,
-        marginBottom:20
+        marginBottom: 20
     },
 
     botaoBack: {
         paddingHorizontal: 30,
-        
+
     },
 
     boxText: {
