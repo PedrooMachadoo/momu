@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity, TextInput, ScrollView, FlatList } from 'react-native';
 import React from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -10,50 +10,62 @@ import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
 export function Home() {
   return (
-    
+
     <View style={style.container}>
+      <ScrollView>
+        <StatusBar style="auto" />
 
-      <StatusBar style="auto" />
-      
-      <View style={style.headerbackground}>
-        
 
-        <View style={style.barrapesquisa}>
-
-          <MaterialIcons
-            style={style.input2}
-            name='search'
-            color={'#63E1FD'}
-            size={30}
-
-          />
-
-          <TextInput
-            style={style.input}
-            placeholder='pesquisar'
-            autoCorrect={false}
-          />
-
+        <View style={style.headerbackground}>
 
         </View>
 
-        <View style={style.containerBola}>
-          <ComponenteBola />
-          <ComponenteBola />
-          <ComponenteBola />
-          <ComponenteBola />
-        </View>
+        <View style={style.absolute}>
+          <View style={style.barrapesquisa}>
 
-        <View style={style.containerTitulo}>
+            <MaterialIcons
+              style={style.input2}
+              name='search'
+              color={'#63E1FD'}
+              size={30}
 
-          <Text style={style.Titulo}>Sugestão para você</Text>
+            />
 
-        </View>
+            <TextInput
+              style={style.input}
+              placeholder='pesquisar'
+              autoCorrect={false}
+            />
 
-        <View style={style.containerQuadrado}>
 
-          <ComponenteQuadrado />
-          <ComponenteQuadrado />
+          </View>
+
+          <View style={style.containerBola}>
+            <ScrollView horizontal={true}>
+              <ComponenteBola nome={'teste 1'}/>
+              <ComponenteBola nome={'teste 1'}/>
+              <ComponenteBola nome={'teste 1'}/>
+              <ComponenteBola nome={'teste 1'}/>
+              <ComponenteBola nome={'teste 1'}/>
+              <ComponenteBola nome={'teste 1'}/>
+              <ComponenteBola nome={'teste 1'}/>
+            </ScrollView>
+          </View>
+
+          <View style={style.containerTitulo}>
+
+            <Text style={style.Titulo}>Sugestão para você</Text>
+
+          </View>
+
+          <View style={style.containerQuadrado}>
+
+            <ComponenteQuadrado />
+            <ComponenteQuadrado />
+
+          </View>
+
+
 
         </View>
 
@@ -66,23 +78,21 @@ export function Home() {
         <View style={style.containerRetangulo}>
 
           <ComponenteRetangulo />
+          <ComponenteRetangulo />
+          <ComponenteRetangulo />
 
         </View>
 
-      </View>
-
-
-
-      
+      </ScrollView>
     </View>
-    
+
   );
 }
 
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffff',
+    backgroundColor: '#fff',
 
 
   },
@@ -91,7 +101,15 @@ const style = StyleSheet.create({
     width: 450,
     height: 450,
     backgroundColor: '#63E1FD',
-    borderBottomLeftRadius: 169
+    borderBottomLeftRadius: 169,
+    marginBottom: 200
+  },
+
+  absolute: {
+    position: 'absolute',
+
+
+
   },
 
   barrapesquisa: {
@@ -100,6 +118,7 @@ const style = StyleSheet.create({
     paddingRight: 25,
     flexDirection: 'row',
     justifyContent: 'space-between',
+
   },
 
   input: {
@@ -131,7 +150,8 @@ const style = StyleSheet.create({
 
     flexDirection: 'row',
     paddingVertical: 30,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+
   },
 
   containerTitulo: {
@@ -153,7 +173,7 @@ const style = StyleSheet.create({
     paddingHorizontal: 10
   },
 
-  containerRetangulo:{
+  containerRetangulo: {
     paddingVertical: 15,
     paddingHorizontal: 10
   }

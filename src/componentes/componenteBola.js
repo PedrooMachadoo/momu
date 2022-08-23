@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-n
 
 
 
-export function ComponenteBola() {
+export function ComponenteBola(props) {
     return (
         <View style={style.componente1}>
 
@@ -13,7 +13,7 @@ export function ComponenteBola() {
         </View>
 
         <View style={style.TextoBola}>
-          <Text> exemplo 1 </Text>
+          <Text>     {props.nome}</Text>
         </View>
 
         </View>

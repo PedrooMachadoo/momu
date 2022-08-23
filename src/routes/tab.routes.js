@@ -61,7 +61,7 @@ export function TabRoutes() {
                     tabBarLabel: 'Ingresso',
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons
-                            name='add'
+                            name='confirmation-number'
                             color={color}
                             size={40}
                             
