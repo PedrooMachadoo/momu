@@ -149,9 +149,6 @@ const style = StyleSheet.create({
     marginTop: 360,
     marginLeft:100
     
-    
-    
-    
   },
 
   containerQuadrado: {
