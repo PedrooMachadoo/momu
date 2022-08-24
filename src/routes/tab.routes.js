@@ -17,7 +17,7 @@ export function TabRoutes() {
         <Navigator
             screenOptions={{
                 tabBarActiveTintColor: '#63E1FD',
-                tabBarInactiveTintColor: '#c5c5c5',
+                tabBarInactiveTintColor: 'black',
                 headerShown: false,
             }}
         >
