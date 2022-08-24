@@ -46,7 +46,8 @@ const style = StyleSheet.create({
         height: 158,
         backgroundColor: '#c1c1c1',
         borderRadius: 12,
-        elevation: 1
+        elevation: 1,
+        marginTop:15
       },
     
       TextoQuadrado: {

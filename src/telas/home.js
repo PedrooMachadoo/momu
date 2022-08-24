@@ -12,7 +12,7 @@ export function Home() {
   return (
 
     <View style={style.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <StatusBar style="auto" />
 
 
@@ -41,14 +41,14 @@ export function Home() {
           </View>
 
           <View style={style.containerBola}>
-            <ScrollView horizontal={true}>
-              <ComponenteBola nome={'teste 1'}/>
-              <ComponenteBola nome={'teste 1'}/>
-              <ComponenteBola nome={'teste 1'}/>
-              <ComponenteBola nome={'teste 1'}/>
-              <ComponenteBola nome={'teste 1'}/>
-              <ComponenteBola nome={'teste 1'}/>
-              <ComponenteBola nome={'teste 1'}/>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+              <ComponenteBola nome={'teste 1'} />
+              <ComponenteBola nome={'teste 1'} />
+              <ComponenteBola nome={'teste 1'} />
+              <ComponenteBola nome={'teste 1'} />
+              <ComponenteBola nome={'teste 1'} />
+              <ComponenteBola nome={'teste 1'} />
+              <ComponenteBola nome={'teste 1'} />
             </ScrollView>
           </View>
 
@@ -59,10 +59,12 @@ export function Home() {
           </View>
 
           <View style={style.containerQuadrado}>
-
-            <ComponenteQuadrado />
-            <ComponenteQuadrado />
-
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+              <ComponenteQuadrado />
+              <ComponenteQuadrado />
+              <ComponenteQuadrado />
+              <ComponenteQuadrado />
+            </ScrollView>
           </View>
 
 
@@ -118,19 +120,17 @@ const style = StyleSheet.create({
     paddingRight: 25,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '77%',
 
   },
 
   input: {
     flex: 1,
     backgroundColor: 'white',
-    height: 40,
-    marginRight: 50,
     borderBottomRightRadius: 6,
     borderTopRightRadius: 6,
-    paddingVertical: 25,
-    fontSize: 20,
-    elevation: 4
+
+
 
 
   },
@@ -142,7 +142,8 @@ const style = StyleSheet.create({
     paddingLeft: 15,
     borderBottomLeftRadius: 6,
     borderTopLeftRadius: 6,
-    elevation: 4
+
+
 
   },
 
