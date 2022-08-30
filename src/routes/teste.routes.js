@@ -6,30 +6,53 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 
 import { Home } from '../telas/home';
-import { Teste } from '../telas/teste';
 import { Explorar } from '../telas/explorar';
 import { Ingresso } from '../telas/Ingresso';
 import { Favorito } from '../telas/Favorito';
 import { Perfil } from '../telas/perfil';
 
-
-const testeStack = createNativeStackNavigator();
-
+import {MeuIngresso} from '../telas/meuIngresso'
 
 
-const { Screen, Navigator } = createBottomTabNavigator();
+const TesteStack = createNativeStackNavigator();
+const TesteTab = createBottomTabNavigator();
 
-export function TabRoutes() {
-    
+function MeuIngressoStack () {
     return (
-        <Navigator
+        <TesteStack.Navigator>
+             <TesteStack.Screen
+                name="Ingresso"
+                component={Ingresso}
+                options={{
+                    
+                    headerShown: false,
+                }}
+                
+            />
+
+            <TesteStack.Screen
+                name="MeuIngresso"
+                options={{
+                    title: 'teste1 (meu ingresso)',
+                    headerTitleAlign: 'center',
+                    
+                }}
+                component={MeuIngresso}
+            />
+        </TesteStack.Navigator>
+    )
+}
+
+function TabRoutes(){
+    return (
+        <TesteTab.Navigator
             screenOptions={{
                 tabBarActiveTintColor: '#63E1FD',
                 tabBarInactiveTintColor: 'black',
                 headerShown: false,
             }}
         >
-            <Screen
+            <TesteTab.Screen
                 name="Home"
                 component={Home}
                 options={{
@@ -45,7 +68,7 @@ export function TabRoutes() {
             />
 
 
-            <Screen
+            <TesteTab.Screen
                 name="Explorar"
                 component={Explorar}
                 options={{
@@ -60,9 +83,9 @@ export function TabRoutes() {
                 }}
             />
 
-            <Screen
+            <TesteTab.Screen
                 name="Ingresso"
-                component={Ingresso}
+                component={MeuIngressoStack}
                 options={{
                     tabBarLabel: 'Ingresso',
                     tabBarIcon: ({ color, size }) => (
@@ -74,8 +97,10 @@ export function TabRoutes() {
                     )
                 }}
             />
+        
+            
 
-            <Screen
+            <TesteTab.Screen
                 name="Favorito"
                 component={Favorito}
                 options={{
@@ -90,7 +115,7 @@ export function TabRoutes() {
                 }}
             />
 
-            <Screen
+            <TesteTab.Screen
                 name="Perfil"
                 component={Perfil}
                 options={{
@@ -104,13 +129,18 @@ export function TabRoutes() {
                     )
                 }}
             />
+        </TesteTab.Navigator>
+    )
+}
 
-            { /* <Screen
-            name="Ingresso"
-            component={}
-        />*/}
+export function TabTesteRoutes() {
+   
 
+    
 
-        </Navigator>
+    return (
+        <TabRoutes/>
+        
+       
     )
 }

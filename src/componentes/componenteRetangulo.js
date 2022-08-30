@@ -4,13 +4,16 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-n
 
 
 
-export function ComponenteRetangulo() {
+export function ComponenteRetangulo(props) {
+  
     return (
         <View style={style.componenteRecomendado}>
-
-            <View style={style.retangulo}>
-
+            <TouchableOpacity onPress={() => {props.props.navigation.navigate(props.route)}}>
+            <View  style={style.retangulo}>
+      
+              
             </View>
+            </TouchableOpacity>
 
             <View style={style.TextoQuadrado}>
               <Text style={style.TextoTitulo}> Titulo evento </Text>

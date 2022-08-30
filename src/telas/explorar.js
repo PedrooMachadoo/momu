@@ -1,30 +1,68 @@
+import * as React from 'react';
+import {Location, Permissions} from 'expo';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity, TextInput, ScrollView, FlatList } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity, TextInput, ScrollView, FlatList, Dimensions, Platform } from 'react-native';
+
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { ComponenteBola } from '../componentes/componenteBola';
 import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
+
+import MapView from 'react-native-maps';
+
+
 export function Explorar() {
+
+  const [location, setLocation] = React.useState({});
+  const [erroMenssage, setErroMenssage] = React.useState("");
+
+React.useEffect(()=>{
+ _getLocation();
+},[])
+
+
+const _getLocation  = async () => {
+  const {status} = await Permissions.askAsync(Permissions.LOCATION);
+
+  if (status !== 'granted'){
+    console.log ('oi pegou ')
+
+   setErroMenssage (" filha da puta richa");
+  }
+
+  const location2 = await Location.getCurrentPositionAsync();
+
+  setLocation(location2);
+}
+
+  
+
   return (
     <View style={style.container}>
-
-      
+        
 
       <StatusBar style="auto" />
 
 
       <View style={style.maps}>
-
+      <MapView 
+      style={style.map} 
+      initialRegion={{
+        latitude: 37.78825,
+        longitude: -122.4324,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }}
+      />
       </View>
 
       <View style={style.absolute}>
 
         <View style={style.filtro}>
 
-        {/*<TextInput
+          {/*<TextInput
             style={style.input}
             placeholder='pesquisar'
             autoCorrect={false}
@@ -46,7 +84,7 @@ export function Explorar() {
 
         <View style={style.bola}>
 
-        <MaterialIcons
+          <MaterialIcons
             style={style.input3}
             name='my-location'
             color={'black'}
@@ -89,14 +127,21 @@ const style = StyleSheet.create({
     //marginBottom: 200
   },
 
+  map: {
+    width: '100%',
+    height:'100%',
+    borderBottomLeftRadius: 24,
+    borderBottomRightRadius: 24
+  },
+
   absolute: {
     position: 'absolute',
     flexDirection: 'row',
     //justifyContent: 'space-between'
-    
+
   },
 
-    filtro: {
+  filtro: {
     marginTop: 80,
     paddingLeft: 30,
     paddingRight: 30,
@@ -105,19 +150,19 @@ const style = StyleSheet.create({
     width: '55%',
     alignItems: 'center',
     paddingTop: 280,
-    
+
   },
 
   Botaofiltro: {
-    
+
     backgroundColor: 'white',
     borderBottomLeftRadius: 6,
     borderTopLeftRadius: 6,
     textAlign: 'center',
-    fontSize : 20,
+    fontSize: 20,
     fontWeight: 'bold',
-    paddingVertical:9,
-    paddingHorizontal:10
+    paddingVertical: 9,
+    paddingHorizontal: 10
 
   },
 
@@ -131,24 +176,24 @@ const style = StyleSheet.create({
   },
 
   input3: {
-    
-    textAlign:'center',
-    justifyContent:'center',
-    alignItems:'center',
-    paddingTop:13
 
-    
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 13
+
+
   },
 
-  bola:{
-    width:50,
-    height:50,
+  bola: {
+    width: 50,
+    height: 50,
     backgroundColor: '#ffff',
-    borderRadius:50,
+    borderRadius: 50,
     elevation: 1,
     marginTop: 360,
-    marginLeft:100
-    
+    marginLeft: 100
+
   },
 
   containerQuadrado: {

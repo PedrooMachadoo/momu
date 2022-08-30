@@ -9,7 +9,8 @@ import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
-export function Ingresso() {
+export function Ingresso(props) {
+  
   return (
     <View style={style.container}>
       
@@ -59,7 +60,7 @@ export function Ingresso() {
 
         <View style={style.containerRetangulo}>
         <ScrollView style={{marginTop:120}} showsVerticalScrollIndicator={false}>
-          <ComponenteRetangulo />
+          <ComponenteRetangulo props={props} route={'MeuIngresso'}/>
           <ComponenteRetangulo />
           <ComponenteRetangulo />
           <ComponenteRetangulo />
