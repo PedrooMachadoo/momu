@@ -33,9 +33,8 @@ function MeuIngressoStack () {
             <TesteStack.Screen
                 name="MeuIngresso"
                 options={{
-                    title: 'teste1 (meu ingresso)',
+                    title: 'Pedido: Nº0000000',
                     headerTitleAlign: 'center',
-                    
                 }}
                 component={MeuIngresso}
             />
