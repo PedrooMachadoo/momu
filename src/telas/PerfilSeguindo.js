@@ -8,12 +8,7 @@ import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
 
-export function Perfil({navigation}) {
-
-  function AbrilPerfilSeguindo() {
-    navigation.navigate('PerfilSeguindo')
-  }
-
+export function PerfilSeguindo() {
   return (
 
     <View style={style.container}>
@@ -58,9 +53,9 @@ export function Perfil({navigation}) {
             <Text style={style.textNavegacaoAtivo}>Infos</Text>
           </TouchableOpacity>
 
-          
-            <Text style={style.textNavegacao} onPress={AbrilPerfilSeguindo}>Seguindo</Text>
-          
+          <TouchableOpacity>
+            <Text style={style.textNavegacao}>Seguindo</Text>
+          </TouchableOpacity>
 
           <TouchableOpacity>
             <Text style={style.textNavegacao}>Conquista</Text>
@@ -323,7 +318,4 @@ const style = StyleSheet.create({
   containerEspecifico: {
 
   },
-
-
-
 })

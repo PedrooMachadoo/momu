@@ -13,6 +13,8 @@ import { Perfil } from '../telas/perfil';
 
 import {MeuIngresso} from '../telas/meuIngresso'
 
+import { PerfilSeguindo } from '../telas/PerfilSeguindo';
+
 
 const TesteStack = createNativeStackNavigator();
 const TesteTab = createBottomTabNavigator();
@@ -37,6 +39,30 @@ function MeuIngressoStack () {
                     headerTitleAlign: 'center',
                 }}
                 component={MeuIngresso}
+            />
+        </TesteStack.Navigator>
+    )
+}
+
+function PerfilStack () {
+    return (
+        <TesteStack.Navigator>
+             <TesteStack.Screen
+                name="Perfil"
+                component={Perfil}
+                options={{
+                headerShown: false,
+                }}
+                
+            />
+
+            <TesteStack.Screen
+                name="PerfilSeguindo"
+                options={{
+                    title: 'Perfilseguindo',
+                    headerTitleAlign: 'center',
+                }}
+                component={PerfilSeguindo}
             />
         </TesteStack.Navigator>
     )
@@ -115,8 +141,8 @@ function TabRoutes(){
             />
 
             <TesteTab.Screen
-                name="Perfil"
-                component={Perfil}
+                name="PerfilAtivo"
+                component={PerfilStack}
                 options={{
                     tabBarLabel: 'Perfil',
                     tabBarIcon: ({ color, size }) => (
