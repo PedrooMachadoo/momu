@@ -26,7 +26,7 @@ export function Cadastro({ navigation }) {
             </View>*/}
             <View style={style.titulo}>
                 <MaterialIcons
-                    name='favorite'
+                    name='arrow-back'
                     color={'black'}
                     size={40}
                     onPress={abrirTela2}

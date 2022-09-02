@@ -6,13 +6,23 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { ComponenteBola } from '../componentes/componenteBola';
 import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
+import { ComponentePerfilSeguindo } from '../componentes/componentePerfilSeguindo';
 
 
-export function PerfilSeguindo() {
+export function PerfilSeguindo({navigation}) {
+
+    function AbrilPerfil() {
+        navigation.navigate('Perfil')
+      }
+
+      function AbrilPerfilConquista() {
+        navigation.navigate('PerfilConquista')
+      }
+
   return (
 
     <View style={style.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+     
         <StatusBar style="auto" />
 
 
@@ -50,136 +60,26 @@ export function PerfilSeguindo() {
 
         <View style={style.containerNavegacao}>
           <TouchableOpacity>
-            <Text style={style.textNavegacaoAtivo}>Infos</Text>
+            <Text style={style.textNavegacao} onPress={AbrilPerfil} >Infos</Text>
           </TouchableOpacity>
 
           <TouchableOpacity>
-            <Text style={style.textNavegacao}>Seguindo</Text>
+            <Text style={style.textNavegacaoAtivo}>Seguindo</Text>
           </TouchableOpacity>
 
           <TouchableOpacity>
-            <Text style={style.textNavegacao}>Conquista</Text>
+            <Text style={style.textNavegacao} onPress={AbrilPerfilConquista}>Conquista</Text>
           </TouchableOpacity>
         </View>
-
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={style.containerInfos}>
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.tituloInfos}>Nome</Text>
-              <Text style={style.nome}>Nome Pessoa</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='edit'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.tituloInfos}>E-mail</Text>
-              <Text style={style.nome}>exemplo@gmail</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='edit'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.tituloInfos}>Instagram</Text>
-              <Text style={style.nome}>user_name</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='edit'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.tituloInfos}>Facebook</Text>
-              <Text style={style.nome}>user_name</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='edit'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.tituloInfos}>Senha</Text>
-              <Text style={style.nome}>0000000</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='edit'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.tituloInfos}>Forma de pagamento</Text>
-              <Text style={style.nome}>00000000506</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='edit'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.nome}>Definir status do perfil</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='arrow-forward'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <View style={style.linha}>
-            <View style={style.containerEspecifico}>
-              <Text style={style.nome}>Sair da minha conta</Text>
-            </View>
-            <TouchableOpacity>
-              <MaterialIcons
-                style={style.input4}
-                name='exit-to-app'
-                color={'#63E1FD'}
-                size={24}
-              />
-            </TouchableOpacity>
-          </View>
+          <ComponentePerfilSeguindo/>
+          <ComponentePerfilSeguindo/>
+          <ComponentePerfilSeguindo/>
+          <ComponentePerfilSeguindo/>
+          <ComponentePerfilSeguindo/>
+          <ComponentePerfilSeguindo/>
+          <ComponentePerfilSeguindo/>
         </View>
 
       </ScrollView>
@@ -288,7 +188,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: 30,
     marginVertical: 30,
-    justifyContent: 'space-between'
+    justifyContent: 'space-around'
   },
 
   textNavegacaoAtivo: {

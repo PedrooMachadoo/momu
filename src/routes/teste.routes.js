@@ -1,6 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { StyleSheet } from 'react-native';
+
+
 import React from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -12,8 +15,10 @@ import { Favorito } from '../telas/Favorito';
 import { Perfil } from '../telas/perfil';
 
 import {MeuIngresso} from '../telas/meuIngresso'
+import { Timeline } from '../telas/Timeline';
 
 import { PerfilSeguindo } from '../telas/PerfilSeguindo';
+import { PerfilConquista } from '../telas/PerfilConquista';
 
 
 const TesteStack = createNativeStackNavigator();
@@ -40,6 +45,16 @@ function MeuIngressoStack () {
                 }}
                 component={MeuIngresso}
             />
+
+            <TesteStack.Screen
+                name="Timeline"
+                options={{
+                   // title: 'time line',
+                   // headerTitleAlign: 'center',
+                   headerShown: false,
+                }}
+                component={Timeline}
+            />
         </TesteStack.Navigator>
     )
 }
@@ -61,8 +76,19 @@ function PerfilStack () {
                 options={{
                     title: 'Perfilseguindo',
                     headerTitleAlign: 'center',
+                    headerShown: false,
                 }}
                 component={PerfilSeguindo}
+            />
+
+            <TesteStack.Screen
+                name="PerfilConquista"
+                options={{
+                    title: 'PerfilConquista',
+                    headerTitleAlign: 'center',
+                    headerShown: false,
+                }}
+                component={PerfilConquista}
             />
         </TesteStack.Navigator>
     )
@@ -75,6 +101,7 @@ function TabRoutes(){
                 tabBarActiveTintColor: '#63E1FD',
                 tabBarInactiveTintColor: 'black',
                 headerShown: false,
+                tabBarShowLabel: false
             }}
         >
             <TesteTab.Screen
@@ -109,6 +136,7 @@ function TabRoutes(){
             />
 
             <TesteTab.Screen
+                //style={style.iconeIngresso}
                 name="Ingresso"
                 component={MeuIngressoStack}
                 options={{
@@ -169,3 +197,21 @@ export function TabTesteRoutes() {
        
     )
 }
+
+{/*const style = StyleSheet.create({
+   
+    iconeIngresso:{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        marginBottom: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        elevation: 6,
+        shadowColor: '#9C27B0',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+    }
+  })*/}

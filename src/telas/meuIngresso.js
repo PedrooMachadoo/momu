@@ -8,7 +8,12 @@ import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
 
-export function MeuIngresso() {
+export function MeuIngresso({navigation}) {
+
+  function AbrilTimeline() {
+    navigation.navigate('Timeline')
+  }
+
   return (
 
     <View style={style.container}>
@@ -59,7 +64,7 @@ export function MeuIngresso() {
             <Text style={style.textoData}>Nome</Text>
             <Text style={style.textIngresso}>Nome Pessoa</Text>
 
-            <TouchableOpacity style={style.botao1}>
+            <TouchableOpacity style={style.botao1} onPress={AbrilTimeline}>
               <Text style={style.textbotao1}>Entrar</Text>
             </TouchableOpacity>
           </View>

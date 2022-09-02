@@ -14,6 +14,10 @@ export function Perfil({navigation}) {
     navigation.navigate('PerfilSeguindo')
   }
 
+  function AbrilPerfilConquista() {
+    navigation.navigate('PerfilConquista')
+  }
+
   return (
 
     <View style={style.container}>
@@ -63,7 +67,7 @@ export function Perfil({navigation}) {
           
 
           <TouchableOpacity>
-            <Text style={style.textNavegacao}>Conquista</Text>
+            <Text style={style.textNavegacao} onPress={AbrilPerfilConquista}>Conquista</Text>
           </TouchableOpacity>
         </View>
 
@@ -293,7 +297,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: 30,
     marginVertical: 30,
-    justifyContent: 'space-between'
+    justifyContent: 'space-around'
   },
 
   textNavegacaoAtivo: {
@@ -311,7 +315,7 @@ const style = StyleSheet.create({
   },
 
   containerInfos: {
-    marginHorizontal: 20
+    marginHorizontal: 30
   },
 
   linha: {

@@ -13,7 +13,7 @@ export function ComponenteBola(props) {
         </View>
 
         <View style={style.TextoBola}>
-          <Text>     {props.nome}</Text>
+          <Text>{props.nome}</Text>
         </View>
 
         </View>
