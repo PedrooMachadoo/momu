@@ -16,6 +16,9 @@ import { Perfil } from '../telas/perfil';
 
 import {MeuIngresso} from '../telas/meuIngresso'
 import { Timeline } from '../telas/Timeline';
+import { ListaPessoas } from '../telas/ListaPesooas';
+import { Cardapio } from '../telas/cardapio';
+import { DetalheProduto } from '../telas/DetalheProduto';
 
 import { PerfilSeguindo } from '../telas/PerfilSeguindo';
 import { PerfilConquista } from '../telas/PerfilConquista';
@@ -54,6 +57,36 @@ function MeuIngressoStack () {
                    headerShown: false,
                 }}
                 component={Timeline}
+            />
+
+            <TesteStack.Screen
+                name="ListaPessoas"
+                options={{
+                   // title: 'Listapessoas',
+                   // headerTitleAlign: 'center',
+                   headerShown: false,
+                }}
+                component={ListaPessoas}
+            />
+
+            <TesteStack.Screen
+                name="Cardapio"
+                options={{
+                   // title: 'Cardapio',
+                   // headerTitleAlign: 'center',
+                   headerShown: false,
+                }}
+                component={Cardapio}
+            />
+
+            <TesteStack.Screen
+                name="DetalheProduto"
+                options={{
+                    title: '',
+                   // headerTitleAlign: 'center',
+                   //headerShown: false,
+                }}
+                component={DetalheProduto}
             />
         </TesteStack.Navigator>
     )

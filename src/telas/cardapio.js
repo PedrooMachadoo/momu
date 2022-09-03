@@ -8,21 +8,26 @@ import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
 import { ComponenteTimeline } from '../componentes/componenteTimeline';
+import { ComponenteProduto } from '../componentes/componenteProduto';
 
 
-export function Timeline({ navigation }) {
+export function Cardapio({ navigation }) {
 
     function AbriListaPessoas() {
         navigation.navigate('ListaPessoas')
     }
 
-    function AbrilCardapio() {
-        navigation.navigate('Cardapio')
+    function AbrilTimeline() {
+        navigation.navigate('Timeline')
     }
 
     function VoltarMeuIngresso() {
         navigation.navigate('MeuIngresso')
-      }
+    }
+
+    function AbriDetalheProduto() {
+        navigation.navigate('DetalheProduto')
+    }
 
     return (
 
@@ -75,7 +80,7 @@ export function Timeline({ navigation }) {
 
                 <View style={style.containerNavegacao}>
                     <TouchableOpacity>
-                        <Text style={style.textNavegacaoAtivo}>Timeline</Text>
+                        <Text style={style.textNavegacao} onPress={AbrilTimeline}>Timeline</Text>
                     </TouchableOpacity>
 
 
@@ -83,25 +88,69 @@ export function Timeline({ navigation }) {
 
 
                     <TouchableOpacity>
-                        <Text style={style.textNavegacao} onPress={AbrilCardapio}>Cardápio</Text>
+                        <Text style={style.textNavegacaoAtivo} >Cardápio</Text>
                     </TouchableOpacity>
                 </View>
 
+                <View style={style.barrapesquisa}>
+
+                    <MaterialIcons
+                        style={style.input2}
+                        name='search'
+                        color={'#63E1FD'}
+                        size={30}
+
+                    />
+
+                    <TextInput
+                        style={style.input}
+                        placeholder='pesquisar'
+                        autoCorrect={false}
+                    />
+
+
+                </View>
+
+
                 <View style={style.containerInfos}>
-                    <View style={style.timelineBranca}>
-                        <View style={style.timelineAmarela}>
-                            <ComponenteTimeline />
-                        </View>
+                    <View>
+                        <Text style={style.Titulo} onPress={AbriDetalheProduto}>Categoria produto</Text>
+                    <View style={style.categoria}>
+                        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+                        <ComponenteProduto />
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        </ScrollView>
                     </View>
-                    <ComponenteTimeline />
-                    <View style={style.timelineBranca}>
-                        <View style={style.timelineAzul}>
-                            <ComponenteTimeline />
-                        </View>
                     </View>
-                    <ComponenteTimeline />
-                    <ComponenteTimeline />
-                    <ComponenteTimeline />
+
+                    <View>
+                        <Text style={style.Titulo}>Categoria produto</Text>
+                    <View style={style.categoria}>
+                        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        </ScrollView>
+                    </View>
+                    </View>
+
+                    <View>
+                        <Text style={style.Titulo}>Categoria produto</Text>
+                    <View style={style.categoria}>
+                        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        <ComponenteProduto/>
+                        </ScrollView>
+                    </View>
+                    </View>
                 </View>
 
             </ScrollView>
@@ -154,15 +203,9 @@ const style = StyleSheet.create({
         marginTop: 295,
         marginLeft: 55,
         elevation: 10
-
     },
 
-
-
-    containerRetangulo: {
-        paddingVertical: 15,
-        paddingHorizontal: 10
-    },
+    
 
     containerBolaPerfil: {
         flexDirection: 'row',
@@ -217,7 +260,7 @@ const style = StyleSheet.create({
 
     containerInfos: {
         alignItems: 'center',
-        
+
     },
 
 
@@ -269,34 +312,53 @@ const style = StyleSheet.create({
 
     },
 
-    timelineAmarela: {
+    barrapesquisa: {
+        marginTop:10,
+        marginBottom:30,
+        flexDirection: 'row',
+        width: '90%',
+        backgroundColor:'#fff',
+        elevation:5,
+        borderRadius:10,
+        marginLeft:20,
+        borderColor:'#63E1FD',
+        borderWidth:3
+        
+        
+        
+    
+      },
+    
+      input: {
+        flex: 1,
+        backgroundColor: '#fdfdfd',
+        borderBottomRightRadius: 6,
+        borderTopRightRadius: 6,
+        
+        //elevation:5
+      },
+    
+      input2: {
+        backgroundColor: '#fdfdfd',
+        paddingRight: 10,
+        paddingVertical: 10,
+        paddingLeft: 15,
+        borderBottomLeftRadius: 6,
+        borderTopLeftRadius: 6,
+       // elevation:5
+      },
 
-        width: '100%',
-        backgroundColor: '#FEDB41',
-        borderBottomRightRadius: 56,
-        borderTopLeftRadius: 56,
-        alignItems: 'center',
-        paddingTop:30
-    },
-    timelineBranca: {
+      categoria:{
+        flexDirection: 'row',
+        marginBottom:20
+      },
 
-        width: '100%',
-        backgroundColor: '#fff',
-        borderBottomLeftRadius: 56,
-        alignItems: 'center',
-
-    },
-
-    timelineAzul: {
-
-        width: '100%',
-        backgroundColor: '#63E1FD',
-        borderBottomRightRadius: 56,
-        borderTopLeftRadius: 56,
-        paddingTop:30,
-        alignItems: 'center',
-
-    },
+      Titulo: {
+        fontWeight: 'bold',
+        fontSize: 22,
+        marginLeft:25,
+        marginBottom:20
+      },
 
 
 

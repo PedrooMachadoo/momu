@@ -8,12 +8,13 @@ import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
 import { ComponenteTimeline } from '../componentes/componenteTimeline';
+import { ComponenteListaPessoas } from '../componentes/componenteListaPessoas';
 
 
-export function Timeline({ navigation }) {
+export function ListaPessoas({ navigation }) {
 
-    function AbriListaPessoas() {
-        navigation.navigate('ListaPessoas')
+    function AbriTimeline() {
+        navigation.navigate('Timeline')
     }
 
     function AbrilCardapio() {
@@ -75,11 +76,11 @@ export function Timeline({ navigation }) {
 
                 <View style={style.containerNavegacao}>
                     <TouchableOpacity>
-                        <Text style={style.textNavegacaoAtivo}>Timeline</Text>
+                        <Text style={style.textNavegacao} onPress={AbriTimeline} >Timeline</Text>
                     </TouchableOpacity>
 
 
-                    <Text style={style.textNavegacao} onPress={AbriListaPessoas}>Lista de pessoas</Text>
+                    <Text style={style.textNavegacaoAtivo} >Lista de pessoas</Text>
 
 
                     <TouchableOpacity>
@@ -88,20 +89,19 @@ export function Timeline({ navigation }) {
                 </View>
 
                 <View style={style.containerInfos}>
-                    <View style={style.timelineBranca}>
-                        <View style={style.timelineAmarela}>
-                            <ComponenteTimeline />
-                        </View>
-                    </View>
-                    <ComponenteTimeline />
-                    <View style={style.timelineBranca}>
-                        <View style={style.timelineAzul}>
-                            <ComponenteTimeline />
-                        </View>
-                    </View>
-                    <ComponenteTimeline />
-                    <ComponenteTimeline />
-                    <ComponenteTimeline />
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
+                   <ComponenteListaPessoas/> 
                 </View>
 
             </ScrollView>
@@ -273,10 +273,9 @@ const style = StyleSheet.create({
 
         width: '100%',
         backgroundColor: '#FEDB41',
-        borderBottomRightRadius: 56,
-        borderTopLeftRadius: 56,
+        borderBottomLeftRadius: 56,
         alignItems: 'center',
-        paddingTop:30
+
     },
     timelineBranca: {
 
@@ -291,9 +290,7 @@ const style = StyleSheet.create({
 
         width: '100%',
         backgroundColor: '#63E1FD',
-        borderBottomRightRadius: 56,
-        borderTopLeftRadius: 56,
-        paddingTop:30,
+        borderBottomLeftRadius: 56,
         alignItems: 'center',
 
     },
