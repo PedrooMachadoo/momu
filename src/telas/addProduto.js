@@ -11,11 +11,11 @@ import { ComponenteTimeline } from '../componentes/componenteTimeline';
 import { ComponenteProduto } from '../componentes/componenteProduto';
 
 
-export function DetalheProduto({ navigation }) {
+export function AddProduto({ navigation }) {
 
 
-    function AbriAddProduto() {
-        navigation.navigate('AddProduto')
+    function AbriSacola() {
+        navigation.navigate('Sacola')
     }
 
     return (
@@ -27,37 +27,29 @@ export function DetalheProduto({ navigation }) {
 
                 <View style={style.componenteRecomendado} >
 
-                    <View style={style.quadrado} >
+                    <View style={style.BolaSacola} >
+
+                    <MaterialIcons
+                            style={style.inputfavorite}
+                            name='local-mall'
+                            color={'#fff'}
+                            size={100}
+                        />
 
                     </View>
 
-                    <View style={style.TextoQuadrado}>
-                        <Text style={style.TextoTitulo} > Descrição produto </Text>
-                        <Text style={style.Preco}> R$ 00,00</Text>
+                    <View>
+                        <Text style={style.textoquantidadeSacola}>Você possui 01 produtos na sacola</Text>
+                        <Text style={style.textoValor}>Total de R$13,90</Text>
                     </View>
 
                 </View>
 
-                <View style={style.barraAdicionar}>
-                    <TouchableOpacity>
-                        <Text style={style.Adicionar}>-</Text>
-                    </TouchableOpacity>
+                
 
-                    <Text style={style.quantidade}>01</Text>
-
-                    <TouchableOpacity>
-                        <Text style={style.Adicionar}>+</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <TouchableOpacity style={style.botao} onPress={AbriAddProduto} >
-                    <Text style={style.textbotao}>Adicionar</Text>
+                <TouchableOpacity style={style.botao} onPress={AbriSacola}>
+                    <Text style={style.textbotao}>Ver sacola</Text>
                 </TouchableOpacity>
-
-                <Text style={style.textoquantidadeSacola}>Você ja possui 0 itens na sacola</Text>
-
-
-
 
 
             </ScrollView>
@@ -82,11 +74,23 @@ const style = StyleSheet.create({
 
     },
 
-    quadrado: {
-        width: '100%',
-        height: 300,
-        backgroundColor: '#c1c1c1',
+    BolaSacola: {
+        flex:1,
+        width: 150,
+        height: 150,
+        backgroundColor: '#FEDB41',
+        borderRadius: 100,
+        marginHorizontal: 120,
+        marginTop:150,
+        marginBottom:20
 
+    },
+
+    inputfavorite: {
+
+        textAlign: 'center',
+        paddingTop: 18,
+        
     },
 
     TextoQuadrado: {
@@ -99,40 +103,6 @@ const style = StyleSheet.create({
 
     },
 
-    TextoTitulo: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: '#8D8D8D'
-    },
-
-    Preco: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        marginVertical: 10
-    },
-
-    barraAdicionar: {
-        flexDirection: 'row',
-        backgroundColor: '#fff',
-        width: '90%',
-        justifyContent: 'space-between',
-        borderRadius: 10,
-        marginLeft: 20,
-        borderColor: '#63E1FD',
-        borderWidth: 2,
-        paddingVertical: 10,
-        paddingHorizontal: 10
-    },
-
-    Adicionar: {
-        fontSize: 22,
-        fontWeight: 'bold'
-    },
-
-    quantidade: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
 
     botao: {
         borderRadius: 12,
@@ -155,11 +125,21 @@ const style = StyleSheet.create({
       },
       textoquantidadeSacola:{
         fontSize: 14,
+        fontWeight: 'bold',
+        width:'100%',
+        textAlign:'center',
+        marginBottom:8
+      },
+
+      textoValor:{
+        fontSize: 14,
         color: '#c1c1c1',
         fontWeight: 'bold',
         width:'100%',
-        marginHorizontal:85
-      }
+        textAlign:'center',
+        marginBottom:50
+      },
+
 
 
 

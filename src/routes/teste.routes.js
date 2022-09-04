@@ -19,6 +19,10 @@ import { Timeline } from '../telas/Timeline';
 import { ListaPessoas } from '../telas/ListaPesooas';
 import { Cardapio } from '../telas/cardapio';
 import { DetalheProduto } from '../telas/DetalheProduto';
+import { AddProduto } from '../telas/addProduto';
+import { Sacola } from '../telas/sacola';
+import { FormaDePagamento } from '../telas/formaDePagamento';
+import { FinalizarCompra } from '../telas/FinalizarCompra';
 
 import { PerfilSeguindo } from '../telas/PerfilSeguindo';
 import { PerfilConquista } from '../telas/PerfilConquista';
@@ -87,6 +91,46 @@ function MeuIngressoStack () {
                    //headerShown: false,
                 }}
                 component={DetalheProduto}
+            />
+
+            <TesteStack.Screen
+                name="AddProduto"
+                options={{
+                    title: '',
+                   // headerTitleAlign: 'center',
+                   //headerShown: false,
+                }}
+                component={AddProduto}
+            />
+
+            <TesteStack.Screen
+                name="Sacola"
+                options={{
+                    title: 'Sacola',
+                    headerTitleAlign: 'center',
+                   //headerShown: false,
+                }}
+                component={Sacola}
+            />
+
+            <TesteStack.Screen
+                name="FormaDePagamento"
+                options={{
+                    title: 'Forma de pagamento',
+                    headerTitleAlign: 'center',
+                   //headerShown: false,
+                }}
+                component={FormaDePagamento}
+            />
+
+            <TesteStack.Screen
+                name="FinalizarCompra"
+                options={{
+                    title: 'Finalizar Compra',
+                    headerTitleAlign: 'center',
+                   //headerShown: false,
+                }}
+                component={FinalizarCompra}
             />
         </TesteStack.Navigator>
     )
