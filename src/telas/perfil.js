@@ -58,16 +58,22 @@ export function Perfil({navigation}) {
         </View>
 
         <View style={style.containerNavegacao}>
-          <TouchableOpacity>
+
+          <View>
             <Text style={style.textNavegacaoAtivo}>Infos</Text>
-          </TouchableOpacity>
+            <View style={style.tracoAtivo}></View>
+          </View>
 
           
+          <TouchableOpacity>
             <Text style={style.textNavegacao} onPress={AbrilPerfilSeguindo}>Seguindo</Text>
+            <View style={style.tracoInativo}></View>
+          </TouchableOpacity>
           
 
           <TouchableOpacity>
             <Text style={style.textNavegacao} onPress={AbrilPerfilConquista}>Conquista</Text>
+            <View style={style.tracoInativo}></View>
           </TouchableOpacity>
         </View>
 
@@ -327,6 +333,21 @@ const style = StyleSheet.create({
   containerEspecifico: {
 
   },
+
+  tracoAtivo: {
+    marginTop:8,
+    width:'100%',
+    height:5,
+    backgroundColor:'#FEDB41',
+    borderRadius:10
+  },
+
+  tracoInativo: {
+    marginTop:8,
+    width:'100%',
+    height:5,
+  },
+
 
 
 
