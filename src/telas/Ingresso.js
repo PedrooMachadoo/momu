@@ -67,7 +67,7 @@ export function Ingresso(props) {
       <View style={style.containerRetangulo}>
         <ScrollView style={{ marginTop: 120 }} showsVerticalScrollIndicator={false}>
           <ComponenteRetangulo props={props} route={'MeuIngresso'} />
-          <ComponenteRetangulo />
+          <ComponenteRetangulo props={props} route={'MeuIngresso'}/>
           <ComponenteRetangulo />
           <ComponenteRetangulo />
           <ComponenteRetangulo />

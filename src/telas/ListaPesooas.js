@@ -77,14 +77,17 @@ export function ListaPessoas({ navigation }) {
                 <View style={style.containerNavegacao}>
                     <TouchableOpacity>
                         <Text style={style.textNavegacao} onPress={AbriTimeline} >Timeline</Text>
+                        <View style={style.tracoInativo}></View>
                     </TouchableOpacity>
-
-
+  
+                    <View>
                     <Text style={style.textNavegacaoAtivo} >Lista de pessoas</Text>
-
+                    <View style={style.tracoAtivo}></View>
+                    </View>
 
                     <TouchableOpacity>
                         <Text style={style.textNavegacao} onPress={AbrilCardapio}>Cardápio</Text>
+                        <View style={style.tracoInativo}></View>
                     </TouchableOpacity>
                 </View>
 
@@ -295,6 +298,18 @@ const style = StyleSheet.create({
 
     },
 
-
+    tracoAtivo: {
+        marginTop:8,
+        width:'100%',
+        height:5,
+        backgroundColor:'#FEDB41',
+        borderRadius:10
+      },
+    
+      tracoInativo: {
+        marginTop:8,
+        width:'100%',
+        height:5,
+      },
 
 })

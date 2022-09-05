@@ -8,7 +8,7 @@ export function ComponenteProdutoSacola() {
 
 
     return (
-        <TouchableOpacity >
+        
 
             <View style={style.componenteRecomendado} >
 
@@ -33,17 +33,17 @@ export function ComponenteProdutoSacola() {
                     </View>
                 </View>
 
-                <View>
+                <TouchableOpacity>
                     <MaterialIcons
                         style={style.inputfavorite}
                         name='delete'
                         color={'#333'}
                         size={20}
                     />
-                </View>
+                </TouchableOpacity>
 
             </View>
-        </TouchableOpacity>
+        
     )
 }
 

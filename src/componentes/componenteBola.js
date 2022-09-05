@@ -5,15 +5,21 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-n
 
 
 export function ComponenteBola(props) {
+
+  const imagem = '../../assets/momu-logo.png'
+  
     return (
         <View style={style.componente1}>
 
         <View style={style.bola}>
-
+        <Image
+        style={style.imagem}
+        source={require(imagem)}
+        />
         </View>
 
-        <View style={style.TextoBola}>
-          <Text>{props.nome}</Text>
+        <View style={style.TextoContainer}>
+          <Text style={style.TextoBola}>{props.nome}</Text>
         </View>
 
         </View>
@@ -35,10 +41,14 @@ const style = StyleSheet.create({
       borderRadius:50,
       elevation: 1
     },
+
+    imagem:{
+      width: '100%',
+      height: '100%',
+    },
   
-    TextoBola:{
+    TextoContainer:{
       paddingTop:10,
-      fontSize:12
     }
     
     

@@ -8,7 +8,7 @@ import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
 
-export function Home() {
+export function Home(props) {
   return (
 
     <View style={style.container}>
@@ -66,9 +66,6 @@ export function Home() {
               <ComponenteQuadrado />
             </ScrollView>
           </View>
-
-
-
         </View>
 
         <View style={style.containerTitulo}>

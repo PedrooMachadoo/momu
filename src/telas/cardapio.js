@@ -81,15 +81,20 @@ export function Cardapio({ navigation }) {
                 <View style={style.containerNavegacao}>
                     <TouchableOpacity>
                         <Text style={style.textNavegacao} onPress={AbrilTimeline}>Timeline</Text>
+                        <View style={style.tracoInativo}></View>
                     </TouchableOpacity>
-
-
-                    <Text style={style.textNavegacao} onPress={AbriListaPessoas}>Lista de pessoas</Text>
 
 
                     <TouchableOpacity>
-                        <Text style={style.textNavegacaoAtivo} >Cardápio</Text>
+                    <Text style={style.textNavegacao} onPress={AbriListaPessoas}>Lista de pessoas</Text>
+                    <View style={style.tracoInativo}></View>
                     </TouchableOpacity>
+
+
+                    <View>
+                        <Text style={style.textNavegacaoAtivo} >Cardápio</Text>
+                        <View style={style.tracoAtivo}></View>
+                    </View>
                 </View>
 
                 <View style={style.barrapesquisa}>
@@ -358,6 +363,20 @@ const style = StyleSheet.create({
         fontSize: 22,
         marginLeft:25,
         marginBottom:20
+      },
+
+      tracoAtivo: {
+        marginTop:8,
+        width:'100%',
+        height:5,
+        backgroundColor:'#FEDB41',
+        borderRadius:10
+      },
+    
+      tracoInativo: {
+        marginTop:8,
+        width:'100%',
+        height:5,
       },
 
 

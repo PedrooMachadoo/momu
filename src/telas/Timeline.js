@@ -74,16 +74,22 @@ export function Timeline({ navigation }) {
 
 
                 <View style={style.containerNavegacao}>
-                    <TouchableOpacity>
+                    <View>
                         <Text style={style.textNavegacaoAtivo}>Timeline</Text>
-                    </TouchableOpacity>
+                        <View style={style.tracoAtivo}></View>
+                    </View>
 
 
+                    <TouchableOpacity>
                     <Text style={style.textNavegacao} onPress={AbriListaPessoas}>Lista de pessoas</Text>
+                    <View style={style.tracoInativo}></View>
+                    </TouchableOpacity>
+                    
 
 
                     <TouchableOpacity>
                         <Text style={style.textNavegacao} onPress={AbrilCardapio}>Cardápio</Text>
+                        <View style={style.tracoInativo}></View>
                     </TouchableOpacity>
                 </View>
 
@@ -297,6 +303,20 @@ const style = StyleSheet.create({
         alignItems: 'center',
 
     },
+
+    tracoAtivo: {
+        marginTop:8,
+        width:'100%',
+        height:5,
+        backgroundColor:'#FEDB41',
+        borderRadius:10
+      },
+    
+      tracoInativo: {
+        marginTop:8,
+        width:'100%',
+        height:5,
+      },
 
 
 
