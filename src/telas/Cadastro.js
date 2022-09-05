@@ -1,16 +1,28 @@
 import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
 export function Cadastro({ navigation }) {
 
+    const [form, setForm]=useState({"nome":"","email":"","senha":""})
+    const formChange=(elemento)=>{
+        if(elemento.target.getAttribute('name')=='fnome'){
+            setForm({"nome":elemento.target.value,"email":form.email,"senha":form.senha})
+        }else if(elemento.target.getAttribute('name')=='femail'){
+            setForm({"nome":form.nome,"email":elemento.target.value,"senha":form.senha})
+        }else if(elemento.target.getAttribute('name')=='fsenha'){
+            setForm({"nome":form.nome,"email":form.email,"senha":elemento.target.value})
+        }
+    }
+
+    console.log('nome:')
 
     function abrirTela2() {
         navigation.navigate('BemVindo')
     }
-
 
 
     return (
@@ -24,7 +36,7 @@ export function Cadastro({ navigation }) {
                 />
 
             </View>*/}
-            <View style={style.titulo}>
+           { /*<View style={style.titulo}>
                 <MaterialIcons
                     name='arrow-back'
                     color={'black'}
@@ -32,7 +44,7 @@ export function Cadastro({ navigation }) {
                     onPress={abrirTela2}
                 />
 
-            </View>
+        </View> */}
 
             <View style={style.boxtitulo}>
                 <Text style={style.titulo}>Preencha as informações para efetuar o seu cadastro</Text>
@@ -42,16 +54,16 @@ export function Cadastro({ navigation }) {
 
                 <View style={style.form}>
                     <Text style={style.tituloForm}>Nome</Text>
-                    <TextInput style={style.inputForm} placeholder='Insira seu nome...' keyboardType='default'></TextInput>
+                    <TextInput style={style.inputForm} placeholder='Insira seu nome...' keyboardType='default' value={form.nome} onChange={(elemento)=> formChange(elemento)}></TextInput>
                 </View>
 
                 <View style={style.form}>
                     <Text style={style.tituloForm}>E-mail</Text>
-                    <TextInput style={style.inputForm} placeholder='Ex. momu@gmail.com...' keyboardType='email-address'></TextInput>
+                    <TextInput style={style.inputForm} placeholder='Ex. momu@gmail.com...' keyboardType='email-address' value={form.email} onChange={(elemento)=> formChange(elemento)}></TextInput>
                 </View>
 
                 <Text style={style.tituloForm}>Senha</Text>
-                <TextInput style={style.inputForm} placeholder='Insira sua senha...' keyboardType='visible-password'></TextInput>
+                <TextInput style={style.inputForm} placeholder='Insira sua senha...' keyboardType='visible-password' value={form.senha} onChange={(elemento)=> formChange(elemento)}></TextInput>
             </View>
 
             <TouchableOpacity
@@ -72,7 +84,7 @@ const style = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#ffff',
-        paddingTop: 60
+        paddingTop: 30
 
     },
 

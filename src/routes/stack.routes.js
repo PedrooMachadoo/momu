@@ -58,7 +58,7 @@ export function StackRoutes() {
 
                     },
                     headerTintColor: '#000',
-                    headerShown: false,
+                    //headerShown: false,
                 }}
                 component={Cadastro}
             />
