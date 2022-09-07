@@ -10,6 +10,8 @@ import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 import { ComponentePerfilConquista } from '../componentes/componentePerfilConquista';
 import { ComponenteConquistaEmProgresso } from '../componentes/componenteConquistaEmprogresso';
 
+import { ComponenteCapaPerfil } from '../componentes/componenteCapaPerfil';
+
 export function PerfilConquista({ navigation }) {
 
     function AbrilPerfil() {
@@ -27,8 +29,8 @@ export function PerfilConquista({ navigation }) {
                 <StatusBar style="auto" />
 
 
-                <View style={style.headerbackground}>
-
+                <View>
+                    <ComponenteCapaPerfil />
                 </View>
 
                 <View style={style.containerBolaPerfil}>
@@ -77,7 +79,7 @@ export function PerfilConquista({ navigation }) {
                 </View>
 
                 <View style={style.containerInfos}>
-                    <View style={style.etapas}> 
+                    <View style={style.etapas}>
                         <Text style={style.titulo}>Concluido</Text>
                         <ComponentePerfilConquista />
                         <ComponentePerfilConquista />
@@ -86,13 +88,13 @@ export function PerfilConquista({ navigation }) {
 
                     <View>
                         <Text style={style.titulo}>Em progresso</Text>
-                        <ComponenteConquistaEmProgresso/>
-                        <ComponenteConquistaEmProgresso/>
-                        <ComponenteConquistaEmProgresso/>
-                        <ComponenteConquistaEmProgresso/>
-                        <ComponenteConquistaEmProgresso/>
-                        <ComponenteConquistaEmProgresso/>
-                        <ComponenteConquistaEmProgresso/>
+                        <ComponenteConquistaEmProgresso />
+                        <ComponenteConquistaEmProgresso />
+                        <ComponenteConquistaEmProgresso />
+                        <ComponenteConquistaEmProgresso />
+                        <ComponenteConquistaEmProgresso />
+                        <ComponenteConquistaEmProgresso />
+                        <ComponenteConquistaEmProgresso />
                     </View>
                 </View>
 
@@ -233,28 +235,28 @@ const style = StyleSheet.create({
 
     },
 
-    etapas:{
-        marginBottom:50
+    etapas: {
+        marginBottom: 50
     },
-    titulo:{
+    titulo: {
         fontSize: 22,
         fontWeight: 'bold',
-        marginLeft:15,
-        marginBottom:25
+        marginLeft: 15,
+        marginBottom: 25
 
     },
 
     tracoAtivo: {
-        marginTop:8,
-        width:'100%',
-        height:5,
-        backgroundColor:'#FEDB41',
-        borderRadius:10
-      },
-    
-      tracoInativo: {
-        marginTop:8,
-        width:'100%',
-        height:5,
-      },
+        marginTop: 8,
+        width: '100%',
+        height: 5,
+        backgroundColor: '#FEDB41',
+        borderRadius: 10
+    },
+
+    tracoInativo: {
+        marginTop: 8,
+        width: '100%',
+        height: 5,
+    },
 })

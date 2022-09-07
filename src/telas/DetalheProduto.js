@@ -13,6 +13,7 @@ import { ComponenteProduto } from '../componentes/componenteProduto';
 
 export function DetalheProduto({ navigation }) {
 
+    const fotoDetalheProduto = '../../assets/produto.png'
 
     function AbriAddProduto() {
         navigation.navigate('AddProduto')
@@ -28,7 +29,10 @@ export function DetalheProduto({ navigation }) {
                 <View style={style.componenteRecomendado} >
 
                     <View style={style.quadrado} >
-
+                        <Image
+                            style={style.imagem}
+                            source={require(fotoDetalheProduto)}
+                        />
                     </View>
 
                     <View style={style.TextoQuadrado}>
@@ -73,9 +77,9 @@ const style = StyleSheet.create({
     },
 
     componenteRecomendado: {
-        
+
         backgroundColor: '#fff',
-       // elevation: 3,
+        // elevation: 3,
 
         marginBottom: 20,
         //marginTop:80
@@ -89,12 +93,17 @@ const style = StyleSheet.create({
 
     },
 
+    imagem: {
+        width: '100%',
+        height: 300,
+    },
+
     TextoQuadrado: {
         paddingTop: 10,
         backgroundColor: '#fff',
         borderTopLeftRadius: 50,
         borderTopRightRadius: 50,
-        marginHorizontal:15
+        marginHorizontal: 15
 
 
     },
@@ -144,22 +153,22 @@ const style = StyleSheet.create({
         paddingBottom: 20,
         marginLeft: 35,
         margin: 10,
-        marginTop:25
-      },
-    
-      textbotao: {
+        marginTop: 25
+    },
+
+    textbotao: {
         fontSize: 16,
         color: 'white',
         fontWeight: 'bold'
-    
-      },
-      textoquantidadeSacola:{
+
+    },
+    textoquantidadeSacola: {
         fontSize: 14,
         color: '#c1c1c1',
         fontWeight: 'bold',
-        width:'100%',
-        marginHorizontal:85
-      }
+        width: '100%',
+        marginHorizontal: 85
+    }
 
 
 

@@ -7,6 +7,7 @@ import { ComponenteBola } from '../componentes/componenteBola';
 import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
+import { ComponenteCapaPerfil } from '../componentes/componenteCapaPerfil';
 
 export function Favorito() {
   return (
@@ -16,8 +17,8 @@ export function Favorito() {
         <StatusBar style="auto" />
 
 
-        <View style={style.headerbackground}>
-
+        <View>
+          <ComponenteCapaPerfil />
         </View>
 
         <View style={style.absolute}>

@@ -10,6 +10,8 @@ import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 import { ComponenteTimeline } from '../componentes/componenteTimeline';
 import { ComponenteProduto } from '../componentes/componenteProduto';
 
+import { ComponenteCapaEvento } from '../componentes/componenteCapaevento';
+
 
 export function Cardapio({ navigation }) {
 
@@ -36,8 +38,8 @@ export function Cardapio({ navigation }) {
                 <StatusBar style="auto" />
 
 
-                <View style={style.headerbackground}>
-
+                <View>
+                <ComponenteCapaEvento/>
                 </View>
 
                 <View style={style.absolutefavorite}>

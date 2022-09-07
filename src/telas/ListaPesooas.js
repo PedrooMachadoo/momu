@@ -10,6 +10,8 @@ import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 import { ComponenteTimeline } from '../componentes/componenteTimeline';
 import { ComponenteListaPessoas } from '../componentes/componenteListaPessoas';
 
+import { ComponenteCapaEvento } from '../componentes/componenteCapaevento';
+
 
 export function ListaPessoas({ navigation }) {
 
@@ -32,8 +34,8 @@ export function ListaPessoas({ navigation }) {
                 <StatusBar style="auto" />
 
 
-                <View style={style.headerbackground}>
-
+                <View>
+                <ComponenteCapaEvento/>
                 </View>
 
                 <View style={style.absolutefavorite}>

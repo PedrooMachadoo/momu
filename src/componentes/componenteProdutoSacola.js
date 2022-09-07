@@ -6,6 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 export function ComponenteProdutoSacola() {
 
+    const fotoProduto = '../../assets/produto.png'
 
     return (
         
@@ -13,7 +14,10 @@ export function ComponenteProdutoSacola() {
             <View style={style.componenteRecomendado} >
 
                 <View style={style.quadrado} >
-
+                <Image
+                style={style.imagem}
+                source={require(fotoProduto)}
+            />
                 </View>
 
                 <View style={style.TextoQuadrado}>
@@ -66,6 +70,13 @@ const style = StyleSheet.create({
         width: '20%',
         height: '100%',
         backgroundColor: '#c1c1c1',
+        borderTopLeftRadius: 12,
+        borderBottomLeftRadius: 12,
+
+    },
+    imagem: {
+        width: '100%',
+        height: 125,
         borderTopLeftRadius: 12,
         borderBottomLeftRadius: 12,
 

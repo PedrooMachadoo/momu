@@ -7,6 +7,8 @@ import { ComponenteBola } from '../componentes/componenteBola';
 import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
+import { ComponenteCapaPerfil } from '../componentes/componenteCapaPerfil';
+
 
 export function Perfil({navigation}) {
 
@@ -25,9 +27,9 @@ export function Perfil({navigation}) {
         <StatusBar style="auto" />
 
 
-        <View style={style.headerbackground}>
-
-        </View>
+        <View>
+                <ComponenteCapaPerfil/>
+                </View>
 
         <View style={style.containerBolaPerfil}>
           <View style={style.BolaEmpresa}>

@@ -8,6 +8,10 @@ import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 
 import { ComponenteTimeline } from '../componentes/componenteTimeline';
+import { ComponenteTimelineEvento } from '../componentes/componenteTimelineEvento';
+import { ComponenteTimelineFlechada } from '../componentes/componenteTimelineFlechada';
+
+import { ComponenteCapaEvento } from '../componentes/componenteCapaevento';
 
 
 export function Timeline({ navigation }) {
@@ -31,8 +35,8 @@ export function Timeline({ navigation }) {
                 <StatusBar style="auto" />
 
 
-                <View style={style.headerbackground}>
-
+                <View>
+                <ComponenteCapaEvento/>
                 </View>
 
                 <View style={style.absolutefavorite}>
@@ -94,20 +98,14 @@ export function Timeline({ navigation }) {
                 </View>
 
                 <View style={style.containerInfos}>
-                    <View style={style.timelineBranca}>
-                        <View style={style.timelineAmarela}>
-                            <ComponenteTimeline />
-                        </View>
-                    </View>
+                    
+                    <ComponenteTimelineFlechada />
                     <ComponenteTimeline />
-                    <View style={style.timelineBranca}>
-                        <View style={style.timelineAzul}>
-                            <ComponenteTimeline />
-                        </View>
-                    </View>
+                    <ComponenteTimelineEvento/>
                     <ComponenteTimeline />
                     <ComponenteTimeline />
                     <ComponenteTimeline />
+
                 </View>
 
             </ScrollView>

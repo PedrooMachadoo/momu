@@ -8,8 +8,11 @@ import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 import { ComponentePerfilSeguindo } from '../componentes/componentePerfilSeguindo';
 
+import { ComponenteCapaPerfil } from '../componentes/componenteCapaPerfil';
+
 
 export function PerfilSeguindo({navigation}) {
+  
 
     function AbrilPerfil() {
         navigation.navigate('Perfil')
@@ -26,8 +29,8 @@ export function PerfilSeguindo({navigation}) {
         <StatusBar style="auto" />
 
 
-        <View style={style.headerbackground}>
-
+        <View>
+          <ComponenteCapaPerfil />
         </View>
 
         <View style={style.containerBolaPerfil}>

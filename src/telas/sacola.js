@@ -13,6 +13,7 @@ import { ComponenteProdutoSacola } from '../componentes/componenteProdutoSacola'
 
 export function Sacola({ navigation }) {
 
+    
 
     function AbriFormaDePagamento() {
         navigation.navigate('FormaDePagamento')

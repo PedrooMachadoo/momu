@@ -6,6 +6,7 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-n
 
 export function ComponenteProduto() {
 
+  const fotoProduto = '../../assets/produto.png'
   
     return (
       <TouchableOpacity >
@@ -13,6 +14,10 @@ export function ComponenteProduto() {
         <View style={style.componenteRecomendado} >
 
             <View style={style.quadrado} >
+            <Image
+                style={style.imagem}
+                source={require(fotoProduto)}
+            />
 
             </View>
 
@@ -43,6 +48,14 @@ const style = StyleSheet.create({
         width: '100%',
         height: 98,
         backgroundColor: '#c1c1c1',
+        borderTopLeftRadius:12,
+        borderTopRightRadius:12
+      },
+
+      imagem:{
+        width: '100%',
+        height: 98,
+        
         borderTopLeftRadius:12,
         borderTopRightRadius:12
       },
