@@ -10,7 +10,7 @@ import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 import { ComponenteCapaPerfil } from '../componentes/componenteCapaPerfil';
 
 
-export function Perfil({navigation}) {
+export function Perfil({ navigation }) {
 
   function AbrilPerfilSeguindo() {
     navigation.navigate('PerfilSeguindo')
@@ -28,8 +28,8 @@ export function Perfil({navigation}) {
 
 
         <View>
-                <ComponenteCapaPerfil/>
-                </View>
+          <ComponenteCapaPerfil />
+        </View>
 
         <View style={style.containerBolaPerfil}>
           <View style={style.BolaEmpresa}>
@@ -66,12 +66,12 @@ export function Perfil({navigation}) {
             <View style={style.tracoAtivo}></View>
           </View>
 
-          
+
           <TouchableOpacity>
             <Text style={style.textNavegacao} onPress={AbrilPerfilSeguindo}>Seguindo</Text>
             <View style={style.tracoInativo}></View>
           </TouchableOpacity>
-          
+
 
           <TouchableOpacity>
             <Text style={style.textNavegacao} onPress={AbrilPerfilConquista}>Conquista</Text>
@@ -318,7 +318,7 @@ const style = StyleSheet.create({
   textNavegacao: {
     fontSize: 16,
     fontWeight: 'bold',
-    color:'#c1c1c1',
+    color: '#c1c1c1',
 
   },
 
@@ -337,17 +337,17 @@ const style = StyleSheet.create({
   },
 
   tracoAtivo: {
-    marginTop:8,
-    width:'100%',
-    height:5,
-    backgroundColor:'#FEDB41',
-    borderRadius:10
+    marginTop: 8,
+    width: '100%',
+    height: 5,
+    backgroundColor: '#FEDB41',
+    borderRadius: 10
   },
 
   tracoInativo: {
-    marginTop:8,
-    width:'100%',
-    height:5,
+    marginTop: 8,
+    width: '100%',
+    height: 5,
   },
 
 
