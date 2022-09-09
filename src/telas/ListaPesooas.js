@@ -26,6 +26,9 @@ export function ListaPessoas({ navigation }) {
     function VoltarMeuIngresso() {
         navigation.navigate('MeuIngresso')
       }
+    function VerMatch() {
+        navigation.navigate('DeuMatch')
+      }
 
     return (
 
@@ -94,7 +97,8 @@ export function ListaPessoas({ navigation }) {
                 </View>
 
                 <View style={style.containerInfos}>
-                   <ComponenteListaPessoas/> 
+                    <Text onPress={VerMatch}>teste</Text>
+                   <ComponenteListaPessoas /> 
                    <ComponenteListaPessoas/> 
                    <ComponenteListaPessoas/> 
                    <ComponenteListaPessoas/> 

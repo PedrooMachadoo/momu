@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-n
 
 
 export function ComponenteListaPessoas(props) {
+    
     return (
         <View style={style.containerBolaPerfil}>
             <View style={style.BolaEmpresa}>
@@ -35,7 +36,7 @@ export function ComponenteListaPessoas(props) {
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity >
                     <MaterialIcons
                         style={style.input4}
                         name='whatshot'

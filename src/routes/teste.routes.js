@@ -23,6 +23,7 @@ import { AddProduto } from '../telas/addProduto';
 import { Sacola } from '../telas/sacola';
 import { FormaDePagamento } from '../telas/formaDePagamento';
 import { FinalizarCompra } from '../telas/FinalizarCompra';
+import { DeuMatch } from '../telas/DeuMatch';
 
 import { PerfilSeguindo } from '../telas/PerfilSeguindo';
 import { PerfilConquista } from '../telas/PerfilConquista';
@@ -131,6 +132,16 @@ function MeuIngressoStack () {
                    //headerShown: false,
                 }}
                 component={FinalizarCompra}
+            />
+
+            <TesteStack.Screen
+                name="DeuMatch"
+                options={{
+                    title: 'match',
+                    headerTitleAlign: 'center',
+                   //headerShown: false,
+                }}
+                component={DeuMatch}
             />
         </TesteStack.Navigator>
     )
