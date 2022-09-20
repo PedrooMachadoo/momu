@@ -48,12 +48,7 @@ export function Explorar() {
         <MapView
           onPress={(e) => novaMarcacao(e.nativeEvent.coordinate)} /* cria marcação por click*/
           style={style.map}
-          initialRegion={{
-            latitude: -8.1551218,
-            longitude: -34.9215322,
-            latitudeDelta: 0.922,
-            longitudeDelta: 0.0421,
-          }}
+          
           showsUserLocation={true}
           loadingEnabled={true}
           mapType='standard'
