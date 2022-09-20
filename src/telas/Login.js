@@ -6,8 +6,8 @@ import React from 'react';
 export function Login({ navigation }) {
 
 
-  function abrirTela3() {
-    navigation.navigate('BemVindo')
+  function abrirHome() {
+    navigation.navigate('Home')
   }
 
   function EsqueciSenha() {
@@ -33,7 +33,7 @@ export function Login({ navigation }) {
         <TextInput style={style.inputForm} placeholder='Insira sua senha...' keyboardType='visible-password'></TextInput>
       </View>
 
-      <TouchableOpacity style={style.botao}>
+      <TouchableOpacity style={style.botao} onPress={abrirHome}>
         <Text style={style.textbotao}>Entrar</Text>
       </TouchableOpacity>
 

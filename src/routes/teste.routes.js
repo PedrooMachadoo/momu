@@ -14,7 +14,7 @@ import { Ingresso } from '../telas/Ingresso';
 import { Favorito } from '../telas/Favorito';
 import { Perfil } from '../telas/perfil';
 
-import {MeuIngresso} from '../telas/meuIngresso'
+import { MeuIngresso } from '../telas/meuIngresso'
 import { Timeline } from '../telas/Timeline';
 import { ListaPessoas } from '../telas/ListaPesooas';
 import { Cardapio } from '../telas/cardapio';
@@ -29,21 +29,149 @@ import { PerfilSeguindo } from '../telas/PerfilSeguindo';
 import { PerfilConquista } from '../telas/PerfilConquista';
 import { MatchEncontro } from '../telas/MatchEncontro';
 
+import { Bemvindo } from "../telas/Bemvindo";
+import { Login } from "../telas/Login";
+import { Cadastro } from '../telas/Cadastro';
+import { Teste } from '../telas/teste';
+import { EsqueciSenha } from '../telas/esqueciSenha';
+import { NovaSenha } from '../telas/novaSenha';
+
+
 
 const TesteStack = createNativeStackNavigator();
 const TesteTab = createBottomTabNavigator();
 
-function MeuIngressoStack () {
+function RotaIninial() {
     return (
-        <TesteStack.Navigator>
-             <TesteStack.Screen
+        <TesteStack.Navigator
+            screenOptions={{
+                /* tudo que colocar aqui vai para todas as telas */
+
+            }}
+        >
+            <TesteStack.Screen
+                name="BemVindo"
+                options={{
+                    title: 'tela 1 (Bem vindo)',
+                    headerTitleAlign: 'center',
+                    headerShown: false,
+
+                }}
+                component={Bemvindo}
+            />
+
+                <TesteStack.Screen
+                    name="Login"
+                    options={{
+                        title: ' ',
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            // backgroundColor: 'green'
+                        },
+                        //headerTintColor: '#ffff',
+                        // headerShown: false,
+
+                    }}
+                    component={Login}
+                />
+            
+            <TesteStack.Screen
+                name="Cadastro"
+                options={{
+                    title: '',
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: '#ffff'
+
+
+                    },
+                    headerTintColor: '#000',
+                    //headerShown: false,
+                }}
+                component={Cadastro}
+            />
+
+            <TesteStack.Screen
+                name="EsqueciSenha"
+                options={{
+                    title: ' ',
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: '#ffff',
+
+
+                    },
+                    headerTintColor: '#000',
+                    //headerShown: false,
+                }}
+                component={EsqueciSenha}
+            />
+
+            <TesteStack.Screen
+                name="NovaSenha"
+                options={{
+                    title: ' se',
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: '#ffff',
+
+
+                    },
+                    headerTintColor: '#000',
+                    //headerShown: false,
+                }}
+                component={NovaSenha}
+            />
+
+            <TesteStack.Screen
+                name="teste"
+                options={{
+                    title: 'tela 2 (Login)',
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: 'green'
+                    },
+                    headerTintColor: '#ffff',
+                }}
+                component={Teste}
+            />
+
+            <TesteStack.Screen
+                name="Home"
+                component={Home}
+                options={{
+                    tabBarLabel: 'home',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialIcons
+                            name='home'
+                            color={color}
+                            size={size}
+                        />
+                    ),
+                    headerShown: false
+                }}
+            />
+
+        </TesteStack.Navigator>
+    )
+}
+
+function MeuIngressoStack() {
+    return (
+        <TesteStack.Navigator
+        screenOptions={{
+            /* tudo que colocar aqui vai para todas as telas */
+
+        }}
+        >
+            <TesteStack.Screen
                 name="Ingresso"
                 component={Ingresso}
                 options={{
-                    
+
                     headerShown: false,
                 }}
-                
+
             />
 
             <TesteStack.Screen
@@ -58,9 +186,10 @@ function MeuIngressoStack () {
             <TesteStack.Screen
                 name="Timeline"
                 options={{
-                   // title: 'time line',
-                   // headerTitleAlign: 'center',
-                   headerShown: false,
+                    
+                    // title: 'time line',
+                    // headerTitleAlign: 'center',
+                    headerShown: false,
                 }}
                 component={Timeline}
             />
@@ -68,9 +197,9 @@ function MeuIngressoStack () {
             <TesteStack.Screen
                 name="ListaPessoas"
                 options={{
-                   // title: 'Listapessoas',
-                   // headerTitleAlign: 'center',
-                   headerShown: false,
+                    // title: 'Listapessoas',
+                    // headerTitleAlign: 'center',
+                    headerShown: false,
                 }}
                 component={ListaPessoas}
             />
@@ -78,9 +207,9 @@ function MeuIngressoStack () {
             <TesteStack.Screen
                 name="Cardapio"
                 options={{
-                   // title: 'Cardapio',
-                   // headerTitleAlign: 'center',
-                   headerShown: false,
+                    // title: 'Cardapio',
+                    // headerTitleAlign: 'center',
+                    headerShown: false,
                 }}
                 component={Cardapio}
             />
@@ -89,8 +218,8 @@ function MeuIngressoStack () {
                 name="DetalheProduto"
                 options={{
                     title: '',
-                   // headerTitleAlign: 'center',
-                   //headerShown: false,
+                    // headerTitleAlign: 'center',
+                    //headerShown: false,
                 }}
                 component={DetalheProduto}
             />
@@ -99,8 +228,8 @@ function MeuIngressoStack () {
                 name="AddProduto"
                 options={{
                     title: '',
-                   // headerTitleAlign: 'center',
-                   //headerShown: false,
+                    // headerTitleAlign: 'center',
+                    //headerShown: false,
                 }}
                 component={AddProduto}
             />
@@ -110,7 +239,7 @@ function MeuIngressoStack () {
                 options={{
                     title: 'Sacola',
                     headerTitleAlign: 'center',
-                   //headerShown: false,
+                    //headerShown: false,
                 }}
                 component={Sacola}
             />
@@ -120,7 +249,7 @@ function MeuIngressoStack () {
                 options={{
                     title: 'Forma de pagamento',
                     headerTitleAlign: 'center',
-                   //headerShown: false,
+                    //headerShown: false,
                 }}
                 component={FormaDePagamento}
             />
@@ -130,7 +259,7 @@ function MeuIngressoStack () {
                 options={{
                     title: 'Finalizar Compra',
                     headerTitleAlign: 'center',
-                   //headerShown: false,
+                    //headerShown: false,
                 }}
                 component={FinalizarCompra}
             />
@@ -140,7 +269,7 @@ function MeuIngressoStack () {
                 options={{
                     title: 'match',
                     headerTitleAlign: 'center',
-                   //headerShown: false,
+                    //headerShown: false,
                 }}
                 component={DeuMatch}
             />
@@ -149,8 +278,8 @@ function MeuIngressoStack () {
                 name="MatchEncontro"
                 options={{
                     title: '',
-                   // headerTitleAlign: 'center',
-                   //headerShown: false,
+                    // headerTitleAlign: 'center',
+                    //headerShown: false,
                 }}
                 component={MatchEncontro}
             />
@@ -158,16 +287,16 @@ function MeuIngressoStack () {
     )
 }
 
-function PerfilStack () {
+function PerfilStack() {
     return (
         <TesteStack.Navigator>
-             <TesteStack.Screen
+            <TesteStack.Screen
                 name="Perfil"
                 component={Perfil}
                 options={{
-                headerShown: false,
+                    headerShown: false,
                 }}
-                
+
             />
 
             <TesteStack.Screen
@@ -193,7 +322,7 @@ function PerfilStack () {
     )
 }
 
-function TabRoutes(){
+function TabRoutes() {
     return (
         <TesteTab.Navigator
             screenOptions={{
@@ -205,8 +334,9 @@ function TabRoutes(){
         >
             <TesteTab.Screen
                 name="Home"
-                component={Home}
+                component={RotaIninial}
                 options={{
+                    
                     tabBarLabel: 'home',
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons
@@ -214,10 +344,10 @@ function TabRoutes(){
                             color={color}
                             size={size}
                         />
-                    )
+                    ),
+                    tabBarVisible: false
                 }}
             />
-
 
             <TesteTab.Screen
                 name="Explorar"
@@ -249,13 +379,14 @@ function TabRoutes(){
                     )
                 }}
             />
-        
-            
+
+
 
             <TesteTab.Screen
                 name="Favorito"
                 component={Favorito}
                 options={{
+                    
                     tabBarLabel: 'Favorito',
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons
@@ -263,7 +394,8 @@ function TabRoutes(){
                             color={color}
                             size={size}
                         />
-                    )
+                    ),
+                    
                 }}
             />
 
@@ -286,31 +418,11 @@ function TabRoutes(){
 }
 
 export function TabTesteRoutes() {
-   
-
-    
 
     return (
-        <TabRoutes/>
-        
-       
+        <TabRoutes />
+
+
     )
 }
 
-{/*const style = StyleSheet.create({
-   
-    iconeIngresso:{
-        width: 60,
-        height: 60,
-        borderRadius: 30,
-        marginBottom: 20,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        elevation: 6,
-        shadowColor: '#9C27B0',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-    }
-  })*/}

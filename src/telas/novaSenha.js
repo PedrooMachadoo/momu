@@ -6,8 +6,8 @@ import React from 'react';
 export function NovaSenha({ navigation }) {
 
 
-  function abrirTela3() {
-    navigation.navigate('BemVindo')
+  function abrirHome() {
+    navigation.navigate('Home')
   }
 
   function EsqueciSenha() {
@@ -36,7 +36,7 @@ export function NovaSenha({ navigation }) {
 
       </View>
 
-      <TouchableOpacity style={style.botao}>
+      <TouchableOpacity style={style.botao} onPress={abrirHome} >
         <Text style={style.textbotao}>Recuperar</Text>
       </TouchableOpacity>
 

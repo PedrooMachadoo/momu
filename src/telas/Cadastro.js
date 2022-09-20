@@ -20,8 +20,8 @@ export function Cadastro({ navigation }) {
 
     console.log('nome:')
 
-    function abrirTela2() {
-        navigation.navigate('BemVindo')
+    function abrirHome() {
+        navigation.navigate('Home')
     }
 
 
@@ -66,7 +66,7 @@ export function Cadastro({ navigation }) {
                 <TextInput style={style.inputForm} placeholder='Insira sua senha...' keyboardType='visible-password' value={form.senha} onChange={(elemento)=> formChange(elemento)}></TextInput>
             </View>
 
-            <TouchableOpacity
+            <TouchableOpacity onPress={abrirHome}
                 style={style.botao}
 
             >
