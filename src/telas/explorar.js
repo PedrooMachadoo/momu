@@ -1,5 +1,6 @@
-import * as React from 'react';
-import {Location, Permissions} from 'expo';
+import React from 'react';
+import * as Location from 'expo-location';
+//import {Location, Permissions} from 'expo';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Image, TouchableOpacity, TextInput, ScrollView, FlatList, Dimensions, Platform } from 'react-native';
 
@@ -8,54 +9,79 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { ComponenteBola } from '../componentes/componenteBola';
 import { ComponenteQuadrado } from '../componentes/componenteQuadrado';
 import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
+import { useState, useEffect } from 'react';
 
 
-import MapView from 'react-native-maps';
+import MapView, { Marker, Callout } from 'react-native-maps';
+
 
 
 export function Explorar() {
 
-  const [location, setLocation] = React.useState({});
-  const [erroMenssage, setErroMenssage] = React.useState("");
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [marker, setMarker] = useState([]);
 
-React.useEffect(()=>{
- _getLocation();
-},[])
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
 
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
 
-const _getLocation  = async () => {
-  const {status} = await Permissions.askAsync(Permissions.LOCATION);
-
-  if (status !== 'granted'){
-    console.log ('oi pegou ')
-
-   setErroMenssage (" filha da puta richa");
+  const novaMarcacao = (coordinate) => {
+    setMarker([...marker, coordinate]);
   }
-
-  const location2 = await Location.getCurrentPositionAsync();
-
-  setLocation(location2);
-}
-
-  
 
   return (
     <View style={style.container}>
-        
 
       <StatusBar style="auto" />
 
-
       <View style={style.maps}>
-      <MapView 
-      style={style.map} 
-      initialRegion={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      }}
-      />
+        <MapView
+          onPress={(e) => novaMarcacao(e.nativeEvent.coordinate)} /* cria marcação por click*/
+          style={style.map}
+          initialRegion={{
+            latitude: -8.1551218,
+            longitude: -34.9215322,
+            latitudeDelta: 0.922,
+            longitudeDelta: 0.0421,
+          }}
+          showsUserLocation={true}
+          loadingEnabled={true}
+          mapType='standard'
+        >
+
+          {marker.length > 0 && (
+            marker.map((m) => {
+              return (
+                <Marker
+                  coordinate={m}
+                  key={Math.random().toString()}
+                  pinColor="#63E1FD"
+                  title="Local evento"
+                  description="descrição do evento (evento perto de você)"
+                >
+                  <Callout>
+                    <View style={style.marcacao} />
+                  </Callout>
+                </Marker>
+              )
+            })
+          )}
+          {/* <Marker
+            coordinate={{latitude: -8.1551218, longitude: -34.9215322,}}
+            title="Local evento"
+            description="descrição do evento (evento perto de você)"
+          />*/}
+        </MapView>
       </View>
 
       <View style={style.absolute}>
@@ -77,7 +103,6 @@ const _getLocation  = async () => {
             name='tune'
             color={'black'}
             size={24}
-
           />
 
         </View>
@@ -89,7 +114,6 @@ const _getLocation  = async () => {
             name='my-location'
             color={'black'}
             size={24}
-
           />
 
         </View>
@@ -114,8 +138,6 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-
-
   },
 
   maps: {
@@ -129,7 +151,7 @@ const style = StyleSheet.create({
 
   map: {
     width: '100%',
-    height:'100%',
+    height: '100%',
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24
   },
@@ -138,7 +160,6 @@ const style = StyleSheet.create({
     position: 'absolute',
     flexDirection: 'row',
     //justifyContent: 'space-between'
-
   },
 
   filtro: {
@@ -202,5 +223,11 @@ const style = StyleSheet.create({
     paddingVertical: 30,
     paddingHorizontal: 10
   },
+
+  marcacao: {
+    width: 30,
+    height: 30,
+    backgroundColor: '#c1c1c1'
+  }
 
 })

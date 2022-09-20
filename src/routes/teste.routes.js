@@ -27,6 +27,7 @@ import { DeuMatch } from '../telas/DeuMatch';
 
 import { PerfilSeguindo } from '../telas/PerfilSeguindo';
 import { PerfilConquista } from '../telas/PerfilConquista';
+import { MatchEncontro } from '../telas/MatchEncontro';
 
 
 const TesteStack = createNativeStackNavigator();
@@ -142,6 +143,16 @@ function MeuIngressoStack () {
                    //headerShown: false,
                 }}
                 component={DeuMatch}
+            />
+
+            <TesteStack.Screen
+                name="MatchEncontro"
+                options={{
+                    title: '',
+                   // headerTitleAlign: 'center',
+                   //headerShown: false,
+                }}
+                component={MatchEncontro}
             />
         </TesteStack.Navigator>
     )

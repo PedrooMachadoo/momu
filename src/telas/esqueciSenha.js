@@ -3,22 +3,22 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
 
-export function Login({ navigation }) {
+export function EsqueciSenha({ navigation }) {
 
 
   function abrirTela3() {
     navigation.navigate('BemVindo')
   }
 
-  function EsqueciSenha() {
-    navigation.navigate('EsqueciSenha')
+  function NovaSenha() {
+    navigation.navigate('NovaSenha')
   }
 
   return (
     <View style={style.container}>
 
       <View style={style.boxtitulo}>
-        <Text style={style.titulo}>Insira suas informações para realizar o login</Text>
+        <Text style={style.titulo}>Insira seu E-mail para     recuperar seu login</Text>
       </View>
 
       <View style={style.boxForm}>
@@ -29,19 +29,13 @@ export function Login({ navigation }) {
           <TextInput style={style.inputForm} placeholder='Ex. momu@gmail.com...' keyboardType='email-address'></TextInput>
         </View>
 
-        <Text style={style.tituloForm}>Senha</Text>
-        <TextInput style={style.inputForm} placeholder='Insira sua senha...' keyboardType='visible-password'></TextInput>
       </View>
 
-      <TouchableOpacity style={style.botao}>
-        <Text style={style.textbotao}>Entrar</Text>
+      <TouchableOpacity style={style.botao} onPress={NovaSenha}>
+        <Text style={style.textbotao}>Recuperar senha</Text>
       </TouchableOpacity>
 
       {/*<Button title=' voltar' onPress={() => navigation.goBack()} /> const navigation = useNavigation();*/}
-
-      <View style={style.boxText}>
-        <Text style={style.subTitulo2} onPress={EsqueciSenha} >Esqueci minha senha</Text>
-      </View>
 
     </View>
   );

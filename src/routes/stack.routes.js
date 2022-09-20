@@ -7,6 +7,8 @@ import { Login } from "../telas/Login";
 import { Home } from '../telas/home';
 import { Cadastro } from '../telas/Cadastro';
 import { Teste } from '../telas/teste';
+import { EsqueciSenha } from '../telas/esqueciSenha';
+import { NovaSenha } from '../telas/novaSenha';
 
 
 const { Screen, Navigator, Group } = createNativeStackNavigator();
@@ -34,13 +36,13 @@ export function StackRoutes() {
                 <Screen
                     name="Login"
                     options={{
-                        title: 'tela 2 (Login)',
+                        title: ' ',
                         headerTitleAlign: 'center',
                         headerStyle: {
-                            backgroundColor: 'green'
+                           // backgroundColor: 'green'
                         },
-                        headerTintColor: '#ffff',
-                        headerShown: false,
+                        //headerTintColor: '#ffff',
+                       // headerShown: false,
 
                     }}
                     component={Login}
@@ -61,6 +63,38 @@ export function StackRoutes() {
                     //headerShown: false,
                 }}
                 component={Cadastro}
+            />
+
+            <Screen
+                name="EsqueciSenha"
+                options={{
+                    title: ' ',
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: '#ffff',
+                        
+                        
+                    },
+                    headerTintColor: '#000',
+                    //headerShown: false,
+                }}
+                component={EsqueciSenha}
+            />
+
+            <Screen
+                name="NovaSenha"
+                options={{
+                    title: ' se',
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: '#ffff',
+                        
+                        
+                    },
+                    headerTintColor: '#000',
+                    //headerShown: false,
+                }}
+                component={NovaSenha}
             />
 
             <Screen

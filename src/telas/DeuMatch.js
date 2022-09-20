@@ -15,8 +15,12 @@ export function DeuMatch({ navigation }) {
 
     const fotoBgMatch = '../../assets/match.png'
 
-    function AbriSacola() {
-        navigation.navigate('Sacola')
+    function VoltarLista() {
+        navigation.navigate('ListaPessoas')
+    }
+
+    function ListaEncontro() {
+        navigation.navigate('MatchEncontro')
     }
 
     return (
@@ -38,7 +42,7 @@ export function DeuMatch({ navigation }) {
                                 style={style.inputfavorite}
                                 name='whatshot'
                                 color={'#FEDB41'}
-                                size={35}
+                                size={60}
                             />
                         </View>
                         <View style={style.BolaMatch2}>
@@ -50,15 +54,15 @@ export function DeuMatch({ navigation }) {
                 </View>
                 <View style={style.ContainerTextoMatch}>
                     <Text style={style.MatchTitulo}>Flechada</Text>
-                    <Text style={style.MatchTexto}>(Usuario) quer te encontrar no (LocalIndicado)</Text>
+                    <Text style={style.MatchTexto}>(Usuario) quer te encontrar  no (LocalIndicado)</Text>
                 </View>
 
                 <View>
-                <TouchableOpacity style={style.botao}  >
-                    <Text style={style.textbotao}>Adicionar</Text>
+                <TouchableOpacity style={style.botao}  onPress={ListaEncontro}>
+                    <Text style={style.textbotao}>Se encontar</Text>
                 </TouchableOpacity>
 
-                <Text style={style.textoquantidadeSacola}>Você ja possui 0 itens na sacola</Text>
+                <Text style={style.continuarNavegando} onPress={VoltarLista}>Continuar navegando</Text>
                 </View>
             </View>
 
@@ -80,44 +84,44 @@ const style = StyleSheet.create({
     },
 
     match: {
-        width: '70%',
-        height: '50%',
+        width: '80%',
+        height: '65%',
         backgroundColor: '#fff',
         borderRadius: 12,
         elevation: 10,
-        marginHorizontal: 50,
-        marginVertical: '40%',
+        marginHorizontal: 40,
+        marginVertical: '30%',
         //alignItems:'center',
         //justifyContent:'center'
     },
 
     BolaMatch: {
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
         backgroundColor: '#c1c1c1',
         borderRadius: 50,
         elevation: 1,
-        marginLeft: 62,
+        marginLeft: 55,
     },
 
     BolaIcone: {
-        width: 50,
-        height: 50,
+        width: 70,
+        height: 70,
         // backgroundColor: '#c1c1c1',
         borderRadius: 50,
-        marginLeft: 55,
+        marginLeft: 70,
         paddingTop: 5,
         position: 'absolute'
 
     },
 
     BolaMatch2: {
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
         backgroundColor: '#c1c1c1',
         borderRadius: 50,
         elevation: 1,
-        marginLeft: 100
+        marginLeft: 130
 
     },
 
@@ -164,7 +168,7 @@ const style = StyleSheet.create({
         backgroundColor: '#63E1FD',
         paddingTop: 20,
         paddingBottom: 20,
-        marginLeft: 35,
+        marginLeft: 28,
         margin: 10,
         marginTop: 25
     },
@@ -176,12 +180,13 @@ const style = StyleSheet.create({
 
     },
 
-    textoquantidadeSacola: {
-        fontSize: 14,
+    continuarNavegando: {
+        fontSize: 16,
         color: '#c1c1c1',
         fontWeight: 'bold',
         width: '100%',
-        marginHorizontal: 85
+        textAlign: 'center',
+        marginTop:12
     }
 
 
