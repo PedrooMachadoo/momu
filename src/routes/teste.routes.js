@@ -37,6 +37,9 @@ import { EsqueciSenha } from '../telas/esqueciSenha';
 import { NovaSenha } from '../telas/novaSenha';
 
 
+import BotaoIngressoTabBar from '../componentes/botaoIngresso';
+
+
 
 const TesteStack = createNativeStackNavigator();
 const TesteTab = createBottomTabNavigator();
@@ -46,16 +49,15 @@ function RotaIninial() {
         <TesteStack.Navigator
             screenOptions={{
                 /* tudo que colocar aqui vai para todas as telas */
-
             }}
         >
             <TesteStack.Screen
                 name="BemVindo"
                 options={{
-                    title: 'tela 1 (Bem vindo)',
+                    tabBarVisible: false,
                     headerTitleAlign: 'center',
                     headerShown: false,
-
+                    title: 'tela 1 (Bem vindo)',
                 }}
                 component={Bemvindo}
             />
@@ -329,7 +331,11 @@ function TabRoutes() {
                 tabBarActiveTintColor: '#63E1FD',
                 tabBarInactiveTintColor: 'black',
                 headerShown: false,
-                tabBarShowLabel: false
+                tabBarShowLabel: false,
+                tabBarStyle:{
+                    paddingBottom:5,
+                    paddingTop:5
+                }
             }}
         >
             <TesteTab.Screen
@@ -345,7 +351,7 @@ function TabRoutes() {
                             size={size}
                         />
                     ),
-                    tabBarVisible: false
+                    //tabBarVisible: false
                 }}
             />
 
@@ -370,12 +376,8 @@ function TabRoutes() {
                 component={MeuIngressoStack}
                 options={{
                     tabBarLabel: 'Ingresso',
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialIcons
-                            name='confirmation-number'
-                            color={color}
-                            size={40}
-                        />
+                    tabBarIcon: ({ color, size, focused }) => (
+                      <BotaoIngressoTabBar color={color} size={size} focused={focused}/>
                     )
                 }}
             />
@@ -426,3 +428,20 @@ export function TabTesteRoutes() {
     )
 }
 
+{/*const style = StyleSheet.create({
+   
+    iconeIngresso:{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        marginBottom: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        elevation: 6,
+        shadowColor: '#9C27B0',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+    }
+  })*/}
