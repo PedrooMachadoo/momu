@@ -12,7 +12,7 @@ import { ComponenteRetangulo } from '../componentes/componenteRetangulo';
 import { useState, useEffect } from 'react';
 
 
-import MapView, { Marker, Callout } from 'react-native-maps';
+import MapView, { Marker, Callout, Circle } from 'react-native-maps';
 
 
 
@@ -49,12 +49,12 @@ export function Explorar() {
         <MapView
           onPress={(e) => novaMarcacao(e.nativeEvent.coordinate)} /* cria marcação por click*/
           style={style.map}
-          initialRegion={{
-            latitude: -8.1551218,
-            longitude: -34.9215322,
-            latitudeDelta: 0.922,
-            longitudeDelta: 0.0421,
-          }}
+        // initialRegion={{
+         //   latitude: -8.1551218,
+         //   longitude: -34.9215322,
+          //  latitudeDelta: 0.922,
+          //  longitudeDelta: 0.0421,
+        //  }}
           showsUserLocation={true}
           loadingEnabled={true}
           mapType='standard'
@@ -77,6 +77,15 @@ export function Explorar() {
               )
             })
           )}
+
+        {/* colocar um circulo em vola do usuario com animação 
+        <Circle
+            center={{}}
+            radius={2000}
+            strokeWidth={0}
+            fillColor="rgba(99,225,253,0.2)"
+          />*/}
+
           {/* <Marker
             coordinate={{latitude: -8.1551218, longitude: -34.9215322,}}
             title="Local evento"
@@ -142,6 +151,7 @@ const style = StyleSheet.create({
   },
 
   maps: {
+    //marginTop:35,
     width: '100%',
     height: '60%',
     backgroundColor: '#63E1FD',
